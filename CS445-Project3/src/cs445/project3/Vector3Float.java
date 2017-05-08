@@ -9,13 +9,12 @@ package cs445.project3;
  *
  * @author Alfredo
  */
-public class CS445Project3 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class Vector3Float {
+    public float x, y, z;
     
+    public Vector3Float(int x, int y, int z){
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
 }
