@@ -1,8 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/**************************************************
+ * file: FPCameraController.java
+ * author: Alfredo Ceballos and Armando Sanabria
+ * class: CS 445 - Computer Graphics
+ * assignment: Quarter project
+ * date last modified: 5/8/2017
+ * purpose: controller for first person camera. handles
+ *          changes coming from user and renders view
+ **************************************************/
 package cs445.project3;
 
 import java.nio.FloatBuffer;
@@ -134,11 +138,12 @@ public class FPCameraController {
         createBlock(0, 0, -10);
         float dx = 0.0f, dy = 0.0f, dz = 0.0f, lastTime = 0.0f;
         long time = 0;
-        float mouseSensitivity = 0.0f, movementSpeed = 0.35f;
+        float mouseSensitivity = 0.09f, movementSpeed = 0.35f;
         Mouse.setGrabbed(false);    //true means mouse is paralyzed
 
         while (!Display.isCloseRequested() && !Keyboard.isKeyDown(Keyboard.KEY_ESCAPE)) {
             time = Sys.getTime();
+            lastTime = time;
             dx = Mouse.getDX();
             dy = Mouse.getDY();
             camera.yaw(dx * mouseSensitivity);
@@ -178,13 +183,14 @@ public class FPCameraController {
      */
     private void render() {
         try {
-            glBegin(GL_QUADS);
+           glBegin(GL_QUADS);
             // Renders top of cube
             glColor3f(0.0f, 0.0f, 1.0f);
-            glVertex3f(1.0f, 1.0f, -1.0f);
-            glVertex3f(-1.0f, 1.0f, -1.0f);
-            glVertex3f(-1.0f, 1.0f, 1.0f);
-            glVertex3f(1.0f, 1.0f, 1.0f);
+            glVertex3f( 1.0f, 1.0f,-1.0f);
+			glVertex3f(-1.0f, 1.0f,-1.0f);
+			glVertex3f(-1.0f, 1.0f, 1.0f);
+			glVertex3f( 1.0f, 1.0f, 1.0f); 
+
 
             // Renders bottom of cube
             glColor3f(0.0f, 1.0f, 0.0f);
@@ -207,7 +213,7 @@ public class FPCameraController {
             glVertex3f(-1.0f, 1.0f, -1.0f);
             glVertex3f(1.0f, 1.0f, -1.0f);
 
-            // Right of cube
+            // Left of cube
             glColor3f(1.0f, 0.0f, 1.0f);
             glVertex3f(-1.0f, 1.0f, 1.0f);
             glVertex3f(-1.0f, 1.0f, -1.0f);
@@ -215,11 +221,11 @@ public class FPCameraController {
             glVertex3f(-1.0f, -1.0f, 1.0f);
 
             // Right of cube
-            glColor3f(1.0f, 0.0f, 1.0f);
-            glVertex3f(1.0f, -1.0f, 1.0f);
-            glVertex3f(1.0f, -1.0f, -1.0f);
+            glColor3f(0.0f, 1.0f, 1.0f);
             glVertex3f(1.0f, 1.0f, -1.0f);
             glVertex3f(1.0f, 1.0f, 1.0f);
+            glVertex3f(1.0f, -1.0f, 1.0f);
+            glVertex3f(1.0f, -1.0f, 1.0f);
             glEnd();
         } catch (Exception e) {
             System.out.println("So an error occurred...");
