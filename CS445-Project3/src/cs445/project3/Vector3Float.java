@@ -1,8 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/**************************************************
+ * file: Vector3dFloat.java
+ * author: Alfredo Ceballos and Armando Sanabria
+ * class: CS 445 - Computer Graphics
+ * assignment: Quarter project
+ * date last modified: 5/6/2017
+ * purpose: Vector class to hold information about camera
+ *          position
+ **************************************************/
 package cs445.project3;
 
 /**
