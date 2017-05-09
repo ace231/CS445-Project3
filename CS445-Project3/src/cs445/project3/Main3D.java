@@ -1,8 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/**************************************************
+ * file: Main3d.java
+ * author: Alfredo Ceballos and Armando Sanabria
+ * class: CS 445 - Computer Graphics
+ * assignment: Quarter project
+ * date last modified: 5/8/2017
+ * purpose: main class for project. initializes window
+ *          and opengl
+ **************************************************/
 package cs445.project3;
 
 import org.lwjgl.input.Keyboard;
