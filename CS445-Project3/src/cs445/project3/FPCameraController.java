@@ -187,9 +187,9 @@ public class FPCameraController {
             // Renders top of cube
             glColor3f(0.0f, 0.0f, 1.0f);
             glVertex3f( 1.0f, 1.0f,-1.0f);
-			glVertex3f(-1.0f, 1.0f,-1.0f);
-			glVertex3f(-1.0f, 1.0f, 1.0f);
-			glVertex3f( 1.0f, 1.0f, 1.0f); 
+	    glVertex3f(-1.0f, 1.0f,-1.0f);
+	    glVertex3f(-1.0f, 1.0f, 1.0f);
+	    glVertex3f( 1.0f, 1.0f, 1.0f); 
 
 
             // Renders bottom of cube
