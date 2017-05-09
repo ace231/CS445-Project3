@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+<<<<<<< HEAD
+=======
 
+>>>>>>> refs/remotes/ace231/master
 package cs445.project3;
 
 import org.lwjgl.input.Keyboard;
@@ -14,6 +17,76 @@ import org.lwjgl.util.glu.GLU;
 
 /**
  *
+<<<<<<< HEAD
+ * @author Alfredo & Armando
+ */
+public class Main3D {
+
+    private final FPCameraController fp = new FPCameraController(0.0f, 0.0f, 0.0f);
+    private DisplayMode displayMode;
+
+    /**
+     * 
+     */
+    public void start() {
+        try {
+            createWindow();
+            initGL();
+            fp.gameLoop();
+        } catch (Exception e) {
+            System.out.println("An error occurred in the main class...");
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 
+     * @throws Exception 
+     */
+    private void createWindow() throws Exception {
+        Display.setFullscreen(false);
+        DisplayMode d[] = Display.getAvailableDisplayModes();
+        for (int i = 0; i < d.length; i++) {
+            if (d[i].getWidth() == 640 && d[i].getHeight() == 480 && d[i].getBitsPerPixel() == 32) {
+                displayMode = d[i];
+                break;
+            }
+        }
+        Display.setDisplayMode(displayMode);
+        Display.setTitle("CS445 PLACEHOLDER TEXT LOL");
+        Display.create();
+    }
+    
+    /**
+     * 
+     */
+    private void initGL() {
+        glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        GLU.gluPerspective(100.0f,
+                (float) displayMode.getWidth() / (float) displayMode.getHeight(), 0.1f, 300.0f);
+        glMatrixMode(GL_MODELVIEW);
+        glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+    }
+    
+    private void render() {
+        while (!Keyboard.isKeyDown(Keyboard.KEY_ESCAPE)) {
+            Display.update();
+            Display.sync(60);
+        }
+        Display.destroy();
+    }
+
+    /**
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+        Main3D thing = new Main3D();
+        thing.start();
+    }
+=======
  * @author Alfredo
  */
 public class Main3D {
@@ -63,4 +136,5 @@ public class Main3D {
 		glMatrixMode(GL_MODELVIEW);
 		glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 	}
+>>>>>>> refs/remotes/ace231/master
 }
