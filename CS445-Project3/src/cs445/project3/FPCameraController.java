@@ -6,6 +6,7 @@
  * date last modified: 5/8/2017
  * purpose: controller for first person camera. handles
  *          changes coming from user and renders view
+ test
  **************************************************/
 package cs445.project3;
 
